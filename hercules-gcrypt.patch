@@ -1,0 +1,83 @@
+--- hercules-3.01/crypto/dyncrypt.c.orig	2003-11-11 21:58:55.000000000 +0100
++++ hercules-3.01/crypto/dyncrypt.c	2004-03-29 23:38:21.958616016 +0200
+@@ -458,7 +458,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_DES, GCRY_CIPHER_MODE_ECB, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_DES, GCRY_CIPHER_MODE_ECB, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -554,7 +554,7 @@
+   }
+ 
+   /* Open the cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_ECB, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_ECB, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -654,7 +654,7 @@
+   }
+ 
+   /* Open the cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_ECB, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_ECB, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -777,7 +777,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -873,7 +873,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -973,7 +973,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -1089,7 +1089,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -1209,7 +1209,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
+@@ -1333,7 +1333,7 @@
+   }
+ 
+   /* Open a cipher handle */
+-  if(!(hd = gcry_cipher_open(GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0)))
++  if(gcry_cipher_open(&hd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0))
+   {
+     logmsg("  %s(%d): gcry_cypher_open(): %s\n", __FILE__, __LINE__, gcry_strerror(-1));
+     return;
