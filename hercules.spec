@@ -1,12 +1,12 @@
 Summary:	Hercules S/370, ESA/390, and z/Architecture emulator
 Summary(pl):	Emulator S/370, ESA/390 i z/Architecture
 Name:		hercules
-Version:	2.17.1
+Version:	3.01
 Release:	1
 License:	QPL
 Group:		Applications/Emulators
 Source0:	http://www.conmicro.cx/hercules/%{name}-%{version}.tar.gz
-# Source0-md5:	e98138eb45d114f2c4a805db91fe308c
+# Source0-md5:	a410fa6446da025ef8aba0b25bf08caa
 URL:		http://www.conmicro.cx/hercules/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -72,3 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/hercules/images/*
 %dir %{_datadir}/hercules/include
 %{_datadir}/hercules/include/*
+%dir %{_libdir}/hercules
+%{_libdir}/hercules/*
+%{_libdir}/libherc*
+%{_mandir}/man1/cckddiag.1*
+%{_mandir}/man1/dasdseq.1*
+%{_mandir}/man4/cckd.4*
