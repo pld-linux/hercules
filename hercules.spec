@@ -1,13 +1,12 @@
 Summary:	Hercules S/370, ESA/390, and z/Architecture emulator
 Summary(pl):	Emulator S/370, ESA/390 i z/Architecture
 Name:		hercules
-Version:	2.16.2
-Release:	2
+Version:	2.17.1
+Release:	1
 License:	QPL
 Group:		Applications/Emulators
 Source0:	http://www.conmicro.cx/hercules/%{name}-%{version}.tar.gz
-# Source0-md5:	a7719cbbdee4072f690b4c67bcfe9fba
-Patch0:		%{name}-ac_fxes.patch
+# Source0-md5:	e98138eb45d114f2c4a805db91fe308c
 URL:		http://www.conmicro.cx/hercules/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,7 +34,6 @@ drukarko-klawiatury oraz terminale 3270.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -53,10 +51,12 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir}/hercules,%{_bindir},%{_datadir}/hercul
 install hercules.cnf $RPM_BUILD_ROOT%{_sysconfdir}/hercules/sample.cnf
 install util/zzsacard.bin $RPM_BUILD_ROOT%{_datadir}/hercules
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/hercules
