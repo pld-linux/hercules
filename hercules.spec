@@ -37,6 +37,7 @@ drukarko-klawiatury oraz terminale 3270.
 
 %build
 rm -f missing
+%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
