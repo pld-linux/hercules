@@ -1,7 +1,7 @@
 Summary:	Hercules S/370, ESA/390, and z/Architecure emulator
 Name:		hercules
 Version:	2.16.2
-Release:	0.1
+Release:	1
 License:	QPL
 Group:		Applications/Emulators
 Source0:	http://www.conmicro.cx/hercules/%{name}-%{version}.tar.gz
@@ -16,7 +16,6 @@ as long as the hardwre needed is emulated. Hercules can emulate FBA
 and CKD DASD, tape, printer, card reader, card punch,
 channel-to-channel adapter, LCS Ethernet, and printer-keyboard and
 3270 terminal devices.
-
 
 %prep
 %setup -q
@@ -35,7 +34,7 @@ channel-to-channel adapter, LCS Ethernet, and printer-keyboard and
 %ifnarch %{ix86}
 %configure --prefix=${RPM_BUILD_ROOT}/%{_prefix}
 %endif
-%{__make} -j 8 
+%{__make} 
 
 %install
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/hercules,%{_bindir},%{_datadir}/hercules}
