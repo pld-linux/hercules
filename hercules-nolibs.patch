@@ -1,0 +1,15 @@
+--- hercules-3.01/configure.ac.orig	2003-11-30 14:16:36.000000000 +0100
++++ hercules-3.01/configure.ac	2004-03-30 00:24:19.434415976 +0200
+@@ -109,9 +109,9 @@
+ 
+ # Libraries
+ AC_CHECK_LIB(m, sqrt)
+-AC_CHECK_LIB(socket, connect)
+-AC_CHECK_LIB(nsl, gethostbyname)
+-AC_CHECK_LIB(resolv, inet_aton)
++AC_SEARCH_LIBS(connect, socket)
++AC_SEARCH_LIBS(gethostbyname, nsl)
++AC_SEARCH_LIBS(inet_aton, resolv)
+ dnl This will only work for zlib >= 1.0.2
+ dnl AC_CHECK_LIB(z, zlibVersion)
+ AC_CHECK_LIB(z, main)
