@@ -13,6 +13,7 @@ URL:		http://www.conmicro.cx/hercules/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
+BuildRequires:	gettext-devel
 BuildRequires:	libgcrypt-devel >= 1.1.42
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
