@@ -5,7 +5,12 @@ Release:	1
 License:	QPL
 Group:		Applications/Emulators
 Source0:	http://www.conmicro.cx/hercules/%{name}-%{version}.tar.gz
+Patch0:		%{name}-ac_fxes.patch
 URL:		http://www.conmicro.cx/hercules/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bzip2-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -19,26 +24,21 @@ channel-to-channel adapter, LCS Ethernet, and printer-keyboard and
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+rm -f missing
+aclocal
 %{__autoconf}
-%ifarch i386
-%configure --build=i386-linux --prefix=${RPM_BUILD_ROOT}/%{_prefix}
-%endif
-%ifarch i586
-%configure --build=i586-linux --prefix=${RPM_BUILD_ROOT}/%{_prefix}
-%endif
-%ifarch i686
-%configure --build=i686-linux --prefix=${RPM_BUILD_ROOT}/%{_prefix}
-%endif
-%ifnarch %{ix86}
-%configure --prefix=${RPM_BUILD_ROOT}/%{_prefix}
-%endif
+%{__automake}
+%configure
 %{__make} 
 
 %install
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/hercules,%{_bindir},%{_datadir}/hercules}
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT 
+
 cp hercules.cnf $RPM_BUILD_ROOT%{_sysconfdir}/hercules/sample.cnf
 cp util/zzsacard.bin $RPM_BUILD_ROOT%{_datadir}/hercules
 
