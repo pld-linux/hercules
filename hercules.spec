@@ -6,6 +6,7 @@ Release:	2
 License:	QPL
 Group:		Applications/Emulators
 Source0:	http://www.conmicro.cx/hercules/%{name}-%{version}.tar.gz
+# Source0-md5:	a7719cbbdee4072f690b4c67bcfe9fba
 Patch0:		%{name}-ac_fxes.patch
 URL:		http://www.conmicro.cx/hercules/
 BuildRequires:	autoconf
