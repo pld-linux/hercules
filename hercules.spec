@@ -41,12 +41,12 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure
-%{__make} 
+%{__make}
 
 %install
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/hercules,%{_bindir},%{_datadir}/hercules}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT 
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install hercules.cnf $RPM_BUILD_ROOT%{_sysconfdir}/hercules/sample.cnf
 install util/zzsacard.bin $RPM_BUILD_ROOT%{_datadir}/hercules
