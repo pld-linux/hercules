@@ -30,8 +30,8 @@ channel-to-channel adapter, LCS Ethernet, and printer-keyboard and
 %description -l pl
 Hercules to emulator komputerów mainframe IBM serii System/370,
 ESA/390 i z/Architecture. Pozwala na uruchomienie dowolnego systemu
-operacyjnego IBM i aplikacji dzia³aj±cych na rzeczywistym systemie -
-w takim zakresie, na jaki pozwala emulowany sprzêt. Hercules potrafi
+operacyjnego IBM i aplikacji dzia³aj±cych na rzeczywistym systemie - w
+takim zakresie, na jaki pozwala emulowany sprzêt. Hercules potrafi
 emulowaæ FBA i CKD DASD, napêdy ta¶mowe, drukarki, czytniki kart,
 dziurkarki kart, interfejsy kana³owe, LCS Ethernet,
 drukarko-klawiatury oraz terminale 3270.
@@ -50,6 +50,7 @@ drukarko-klawiatury oraz terminale 3270.
 %{__make}
 
 %install
+rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir}/hercules,%{_bindir},%{_datadir}/hercules}
 
 %{__make} install \
@@ -76,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/hercules
 %attr(755,root,root) %{_libdir}/hercules/*.so
 %dir %{_sysconfdir}/hercules
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/hercules/sample.cnf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/hercules/sample.cnf
 %dir %{_datadir}/hercules
 %{_datadir}/hercules/*.bin
 %{_datadir}/hercules/*.html
