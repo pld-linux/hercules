@@ -1,5 +1,5 @@
 Summary:	Hercules S/370, ESA/390, and z/Architecture emulator
-Summary(pl):	Emulator S/370, ESA/390 i z/Architecture
+Summary(pl.UTF-8):   Emulator S/370, ESA/390 i z/Architecture
 Name:		hercules
 Version:	3.01
 Release:	2
@@ -27,13 +27,13 @@ and CKD DASD, tape, printer, card reader, card punch,
 channel-to-channel adapter, LCS Ethernet, and printer-keyboard and
 3270 terminal devices.
 
-%description -l pl
-Hercules to emulator komputerów mainframe IBM serii System/370,
+%description -l pl.UTF-8
+Hercules to emulator komputerÃ³w mainframe IBM serii System/370,
 ESA/390 i z/Architecture. Pozwala na uruchomienie dowolnego systemu
-operacyjnego IBM i aplikacji dzia³aj±cych na rzeczywistym systemie - w
-takim zakresie, na jaki pozwala emulowany sprzêt. Hercules potrafi
-emulowaæ FBA i CKD DASD, napêdy ta¶mowe, drukarki, czytniki kart,
-dziurkarki kart, interfejsy kana³owe, LCS Ethernet,
+operacyjnego IBM i aplikacji dziaÅ‚ajÄ…cych na rzeczywistym systemie - w
+takim zakresie, na jaki pozwala emulowany sprzÄ™t. Hercules potrafi
+emulowaÄ‡ FBA i CKD DASD, napÄ™dy taÅ›mowe, drukarki, czytniki kart,
+dziurkarki kart, interfejsy kanaÅ‚owe, LCS Ethernet,
 drukarko-klawiatury oraz terminale 3270.
 
 %prep
