@@ -1,5 +1,5 @@
 Summary:	Hercules S/370, ESA/390, and z/Architecture emulator
-Summary(pl.UTF-8):   Emulator S/370, ESA/390 i z/Architecture
+Summary(pl.UTF-8):	Emulator S/370, ESA/390 i z/Architecture
 Name:		hercules
 Version:	3.01
 Release:	2
